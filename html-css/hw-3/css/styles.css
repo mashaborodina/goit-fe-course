@@ -77,6 +77,7 @@ img {
     margin-bottom: 110px;
     padding: 0 38px;
     text-align: left;
+    vertical-align: top;
 }
 
 .content-list-item:nth-child(2n) {
