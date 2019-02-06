@@ -111,7 +111,9 @@ img {
 }
 
 .features-list li {
+    position: relative;
     width: 255px;
+    height: 322px;
     float: left;
     margin-right: 30px;
     margin-bottom: 30px;
@@ -145,40 +147,35 @@ img {
 }
 
 .features-list li p:first-of-type {
+    position: absolute;
+    left: 0;
+    bottom: 0;
     width: 201px;
     background: #000;
     color: #fff;
     padding-left: 15px;
+    z-index: 9;
 }
 
 .features-list li p:last-of-type {
+    position: absolute;
+    right: 0;
+    bottom: 0;
     width: 54px;
     background: rgba(0, 0, 0, 44%);
     color: #fff;
     text-align: center;
+    z-index: 9;
 }
 
 .features-list li p:last-of-type::before {
     content: "\0024";
 }
 
-.features-list li {
-background: #e9f0fd repeat-y;
-height: 322px;
-width: 255px;
-opacity: 90%;
-}
-
-.features-list li {
-height: auto;
-overflow: hidden;
-}
-
 .title-list {
     list-style: none;
     margin: 0;
     padding: 0;
-    
 }
 
 .title-list li {
