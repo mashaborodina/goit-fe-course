@@ -1,0 +1,108 @@
+@media (min-width: 768px) {
+    
+   
+
+    .container {
+      max-width: 768px;
+      padding: 0 10px;
+    }
+
+    .row {    
+      margin-right: -10px;
+      margin-left: -10px;
+    }
+  
+    .cover-wrapper { 
+      min-height: 700px;
+      background-image: linear-gradient(to left, rgba(26, 25, 21, .2), rgba(26, 25, 21, .2)), url(../images/background/wrapper_tablet.png);
+    }
+  
+    .button {
+      margin-top: 38px;
+    }
+  
+    .page-title {
+      line-height: 38px;
+      margin-left: 12px;
+    }
+  
+    .btns-group {
+      margin-right: 12px;
+    }
+
+    .header .row {
+        align-items: center;
+    }
+    
+    .page-title {
+        margin-top: 0;
+    }
+  
+    .row {
+      padding-bottom: 0;
+      margin-bottom: 140px;
+    }
+    
+    .title {
+      font-size: 52px; 
+      line-height: 62px;
+      margin-bottom: 26px;
+    }
+
+    .subtitle {
+      font-size: 24px;
+      margin-bottom: 32px; 
+    }
+
+    .button {
+      width: 226px;
+      margin: 0 auto;  
+    }
+    
+    .section-title {
+      margin-top: 68px;
+      margin-bottom: 32px; 
+    }
+
+    .article1, .article3 {
+      margin-bottom: 56px;
+    }
+
+    .article2, .article4 {
+      margin-bottom: 36px;
+    }
+
+    .articles-loader { 
+      margin-bottom: 40px;
+      width: 193px;
+    } 
+}
+  
+  
+  @media (min-width: 940px) {
+  
+    .container {
+      max-width: 940px; 
+    }
+   
+    .page-title, .button {
+      margin-left: 0;
+      margin-right: 0;
+      padding: 0;
+    }
+      
+    .cover-wrapper {  
+      background-image: linear-gradient(to left, rgba(26, 25, 21, .2), rgba(26, 25, 21, .2)), url(../images/background/wrapper.png);
+    }
+
+    .col-dd940-3 {
+        max-width: 25%;
+    }
+    
+    .text-dd940-left {
+        text-align: left!important;
+    }
+    .text-dd940-right {
+        text-align: right!important;
+    }
+}
