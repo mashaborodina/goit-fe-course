@@ -69,11 +69,7 @@ class Notepad {
   }
 
   findNoteById(id) {
-    for (let note of this.notes) {
-      if (note.id === id) {
-      return note;
-      }
-    }
+    this.notes.find(obj => obj.id === id);
   }
 
   saveNote(note) {
@@ -84,6 +80,7 @@ class Notepad {
   deleteNote(id) {
     const index = this.notes.indexOf(this.findNoteById(id));
     this.notes.splice(index, 1);
+    /*this.notes = this.notes.filter( obj => obj.id !== id)*/
   }
 
   updateNoteContent(id, updatedContent) {
@@ -99,25 +96,29 @@ class Notepad {
   }
 
   filterNotesByQuery(query) {
-    const queryNotes = [];
-    for (let note of this.notes) {
-      if (note.title.toLowerCase().includes(query.toLowerCase()) || note.body.toLowerCase().includes(query.toLowerCase())) {
-        queryNotes.push(note);
-        return queryNotes;
-      }
-    }
-  }
+    const newArr = [];
 
-  filterNotesByPriority(priority) {
-    const priorityNotes = [];
-    for (let note of this.notes) {
-      if (note.priority === priority) {
-        priorityNotes.push(note);
-        return priorityNotes
+    this.notes.filter(obj => {
+      const titleLower = obj.title.toLowerCase();
+      const bodyLower = obj.body.toLowerCase();
+      if (titleLower.includes(query.toLowerCase()) || bodyLower.includes(query.toLowerCase())){
+        newArr.push(obj);
       }
-    }
-  }
-};
+    });
+    return newArr;
+  };
+
+  filterNotesByPriority = function(priority) {
+    const newArr = [];
+
+    this.notes.filter(obj => {
+      if (obj.priority === priority) {
+        newArr.push(obj);
+      }
+    });
+    return newArr;
+  };
+}
 
 //////////////////////////////////////////////////////////////
 
@@ -197,6 +198,7 @@ function createNoteFooter(priority) {
 }
 
 function renderNoteList(listRef, notes) {
+  listRef.innerHTML = '';
   let listNotes = notes.map(note => createListItem(note));
   listRef.append(...listNotes);
 }
@@ -268,7 +270,3 @@ function filterNotes(event) {
   refs.noteList.innerHTML = '';
   renderNoteList(refs.noteList, notepad.filterNotesByQuery(event.target.value));
 }
-
-
-
-
