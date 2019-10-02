@@ -2,6 +2,12 @@ import {PRIORITY_TYPES, ICON_TYPES, NOTE_ACTIONS} from './constants';
 
 const notepad = new Notepad(initialNotes);
 
+export const getRefs = () => ({
+  form: document.querySelector('.note-editor'), //новая заметка
+  noteList: document.querySelector('.note-list'), //ul
+  search: document.querySelector('form.search-form'), //фильтрация заметок
+});
+
 export function createListItem({ id, title, body, priority }) {
 
   let noteListItem = document.createElement('li');

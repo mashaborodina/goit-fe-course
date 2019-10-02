@@ -2,4 +2,4 @@
 
 import './sass/main.scss';
 
-import './js/app.js';
+import * as Module from './js/app';

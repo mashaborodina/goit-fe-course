@@ -1,7 +1,7 @@
 // Imports JS
   
 import Notepad from './utils/notepad-model.js';
-import {refs, renderNoteList, addListItem} from './utils/view.js';
+import {getRefs, createListItem, renderNoteList} from './utils/view.js';
 import initialNotes from '../assets/notes.json';
 import {PRIORITY_TYPES, ICON_TYPES, NOTE_ACTIONS} from './utils/constants.js';
 
@@ -11,11 +11,7 @@ const notepad = new Notepad(initialNotes);
 
 //-------------------------------Ссылки на узел DOM--------------------------------//
 
-const refs = {
-    form: document.querySelector('.note-editor'), //новая заметка
-    noteList: document.querySelector('.note-list'), //ul
-    search: document.querySelector('form.search-form'), //фильтрация заметок
-  }
+const refs = getRefs();
   
   //----------------------------------Слушатели---------------------------------------//
   refs.form.addEventListener('submit', handleSubmitForm);
