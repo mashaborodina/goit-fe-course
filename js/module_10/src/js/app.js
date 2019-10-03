@@ -3,10 +3,10 @@
 import Notepad from './utils/notepad-model.js';
 import {getRefs, createListItem, renderNoteList} from './utils/view.js';
 import initialNotes from '../assets/notes.json';
-import {PRIORITY_TYPES, ICON_TYPES, NOTE_ACTIONS} from './utils/constants.js';
+import {PRIORITY_TYPES} from './utils/constants.js';
 
 // Modules
-const shortid = require('shortid')
+const shortid = require('shortid');
 const notepad = new Notepad(initialNotes);
 
 //-------------------------------Ссылки на узел DOM--------------------------------//
@@ -57,4 +57,9 @@ const refs = getRefs();
   function filterNotes(event) {
     refs.noteList.innerHTML = '';
     renderNoteList(refs.noteList, notepad.filterNotesByQuery(event.target.value));
-  }
+  };
+
+ 
+  let list = document.querySelector('.note-list');
+  renderNoteList(list, notepad.notes);
+  

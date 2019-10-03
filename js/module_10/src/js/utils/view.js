@@ -1,6 +1,6 @@
-import {PRIORITY_TYPES, ICON_TYPES, NOTE_ACTIONS} from './constants';
+import {ICON_TYPES, NOTE_ACTIONS} from './constants';
 
-const notepad = new Notepad(initialNotes);
+/*const notepad = new Notepad(initialNotes);*/
 
 export const getRefs = () => ({
   form: document.querySelector('.note-editor'), //новая заметка
@@ -87,6 +87,7 @@ export function renderNoteList(listRef, notes) {
   listRef.append(...listNotes);
 }
 
-let list = document.querySelector('.note-list');
+/*let list = document.querySelector('.note-list');
 
 renderNoteList(list, notepad.notes);
+*/
