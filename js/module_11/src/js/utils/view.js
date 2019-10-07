@@ -8,7 +8,7 @@ export const getRefs = () => ({
 });
 
 export function renderNoteList(listRef, notes) {
-  listRef.innerHTML = '';
+  /*listRef.innerHTML = '';*/
   let listNotes = notes.map(note => noteTemplate(note));
   listRef.insertAdjacentHTML('beforeend', listNotes.join(''));
 }
